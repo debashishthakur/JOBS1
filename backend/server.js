@@ -5,13 +5,16 @@ const passportConfig = require("./lib/passportConfig");
 const cors = require("cors");
 const fs = require("fs");
 
+// For local database
+// mongodb://localhost:27017/jobPortal
+
 // MongoDB
 mongoose
-  .connect("mongodb://localhost:27017/jobPortal", {
+  .connect("mongodb+srv://mongodeba:mongodeba1234@cluster0.4ixw7pj.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-    useFindAndModify: false,
+    // useFindAndModify: false,
   })
   .then((res) => console.log("Connected to DB"))
   .catch((err) => console.log(err));
